@@ -5,12 +5,12 @@ import 'services/services.dart';
 import 'pages/pages.dart';
 
 void main() => runApp(
-  // Injects the Authentication service
+  // Injects the Authentication service here
   RepositoryProvider<AuthenticationService>(
     create: (context){
       return FakeAuthenticationService();
     },
-    // Injects the Authentication BLoC
+    // Injects the Authentication BLoC here
     child: BlocProvider<AuthenticationBloc>(
       create: (context){
         final authService = RepositoryProvider.of<AuthenticationService>(context);
